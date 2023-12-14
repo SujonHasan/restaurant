@@ -13,17 +13,17 @@ function CustomerCard({id, name, food}: CustomerCardType) {
   const Dispatch = useDispatch();
   const [customerFoodInput, setCustomerFoodInput] = useState('');
   return (
-    <div className='shadow-sm p-3 mb-5 bg-white rounded'>
+    <div className='shadow-sm p-2 mb-5 bg-white rounded'>
       <h3>{name}</h3>
-      <div className='d-flex justify-content-between'>
-        <div className='d-flex flex-wrap gap-5 '>
+      <div className='justify-content-between'>
+        <div className='d-flex flex-wrap'>
           {food.map((food)=>{
-            return <p>{food}</p>
+            return <p className='pe-3'>{food}</p>
           })}
         </div>
-        <div className="text-end ">
+        <div className="">
           <input
-            className=''
+            className='w-50'
             value={customerFoodInput}
             onChange={(e) => setCustomerFoodInput(e.target.value)}
           />

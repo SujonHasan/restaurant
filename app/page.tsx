@@ -23,11 +23,10 @@ export default function Home() {
     setReservationNameInput("");
   }
   return (
-    <main className={styles.main} >
-
+    <main>
       <div className='container'>
         <div className='row text-center'>
-          <div className='col-4 fs-3 border-end border-secondary'>
+          <div className='col-12 col-md-4 fs-3  border-end-md border-secondary'>
             <div>
               <p className=''>Reservations</p>
               <div className='fs-5'>
@@ -46,7 +45,7 @@ export default function Home() {
               <button onClick={handleInput} >Add</button>
             </div>
           </div>
-          <div className='col-8 fs-5 '>
+          <div className='col-8 fs-5 mx-auto'>
             <p className='fs-2'>Customers Food</p>
 
             {customers.map((customer) => {

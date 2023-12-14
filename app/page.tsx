@@ -16,8 +16,8 @@ export default function Home() {
 
   const Dispatch = useDispatch();
 
-  const handleInput = () => {
-
+  const handleInput = (e:any) => {
+    e.preventDefault();
     if (!reservationNameInput) return;
     Dispatch(addReservation(reservationNameInput));
     setReservationNameInput("");
@@ -37,12 +37,14 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-5 fs-5">
-              <input
-                className='w-50'
-                value={reservationNameInput}
-                onChange={(e) => setReservationNameInput(e.target.value)}
-              />
-              <button onClick={handleInput} >Add</button>
+              <form action="" onSubmit={handleInput}>
+                <input
+                  className='w-50'
+                  value={reservationNameInput}
+                  onChange={(e) => setReservationNameInput(e.target.value)}
+                />
+                <button type='submit' >Add</button>
+              </form>
             </div>
           </div>
           <div className='col-8 fs-5 mx-auto'>
